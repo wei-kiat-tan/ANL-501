@@ -13,7 +13,7 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Assessing Relationship of Work &amp; Happiness
+# Assessing Relationship of Work and Happiness
 ]
 .author[
 ### Tan Wei Kiat
