@@ -23,6 +23,15 @@ class: center, middle, inverse, title-slide
 ]
 
 ---
+
+
+
+
+
+
+
+
+
 <style>
 /* Globally change the font size of all figure captions */
 figcaption {
