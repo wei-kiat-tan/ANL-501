@@ -24,21 +24,13 @@ class: center, middle, inverse, title-slide
 
 ---
 
-
-
-
-
-
-
-
-
-&lt;style&gt;
+<style>
 /* Globally change the font size of all figure captions */
 figcaption {
   font-size: 12px;  /* Adjust this value to change the size */
   text-align: center;  /* Center-align all captions */
 }
-&lt;/style&gt;
+</style>
 
 ### Contents
 
@@ -50,7 +42,7 @@ figcaption {
 
 * **Results**
 
-* **Does Economic environment affect work &amp; happiness?**
+* **Does Economic environment affect work & happiness?**
 
 * **Long working hours does not mean poor happiness**
 
@@ -83,7 +75,19 @@ The relationship between work and happiness is not significant to a large extent
 
 * The third dataset contains data about happiness taken from the World Happiness Report 2024.
 
+```{R, echo=FALSE, results='hide', message=FALSE, warning=FALSE, results='hide', message=FALSE, warning=FALSE, fig.keep='none'}
+ # change to C:/Users/Wei Kiat/OneDrive/Documents/ when accessing on laptop
+happiness<- read.csv("~/Masters/ANL_501/TMA/ANL501_TMA_JUL24_HAPPINESS.csv")
+working<- read_excel("~/Masters/ANL_501/TMA/ANL501_TMA_JUL24_WORKING.xlsx")
 
+# Main OECD hours data
+oecd_hours<- read_excel("~/Masters/ANL_501/TMA/ANL501_TMA_JUL24_HOURS.xlsx",
+                        sheet = "OECD Total") 
+
+#Singapore hours
+sg_data_total <- read_excel("~/Masters/ANL_501/TMA/ANL501_TMA_JUL24_HOURS.xlsx"
+                            , sheet = "Singapore Total")
+```
 
 ---
 class: center, middle, inverse
@@ -105,7 +109,7 @@ class: center, middle, inverse
 ## Results
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -129,29 +133,29 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Overview
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="Tutor-Marked-Assignment/images/Rplot_overview.jpeg" width="500px"&gt;
-      &lt;figcaption style="text-align: centre;"&gt;Figure: Distribution of working hours among the 47 Economies&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot_overview.jpeg" width="500px">
+      <figcaption style="text-align: centre;">Figure: Distribution of working hours among the 47 Economies</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;47 Economies participated in this analysis, in which 44 are from OECD and the other is Singapore, which is not part of OECD.&lt;/li&gt;
-      &lt;li&gt;Annual average hours range from the lowest as less than 30 hours to almost 50 hours.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>47 Economies participated in this analysis, in which 44 are from OECD and the other is Singapore, which is not part of OECD.</li>
+      <li>Annual average hours range from the lowest as less than 30 hours to almost 50 hours.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -175,31 +179,31 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Overview
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot1.jpeg" width="600px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 1: Log GDP per capita, Positive Emotions and Annual Average Hours overtime&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot1.jpeg" width="600px">
+      <figcaption style="text-align: left;">Figure 1: Log GDP per capita, Positive Emotions and Annual Average Hours overtime</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Luxemburg has the highest GDP per capita among the 47 participant economies, achieving it with working hours less than 40.&lt;/li&gt;
-      &lt;li&gt;Majority of the countries achieved excellent and good category rating for Positive emotions with minor achieving bad category&lt;/li&gt;
-      &lt;li&gt;Size of the dots in Figure 1 &amp; 2 is dependent on the Annual Average hours. Longer hours imply bigger dots.&lt;/li&gt;
-      &lt;li&gt;Different colours indicate different positive emotions categories.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>Luxemburg has the highest GDP per capita among the 47 participant economies, achieving it with working hours less than 40.</li>
+      <li>Majority of the countries achieved excellent and good category rating for Positive emotions with minor achieving bad category</li>
+      <li>Size of the dots in Figure 1 & 2 is dependent on the Annual Average hours. Longer hours imply bigger dots.</li>
+      <li>Different colours indicate different positive emotions categories.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -223,34 +227,34 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Overview
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot2.jpeg" width="600px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 2: Log GDP per capita, Negative Emotions and Annual Average Hours overtime&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot2.jpeg" width="600px">
+      <figcaption style="text-align: left;">Figure 2: Log GDP per capita, Negative Emotions and Annual Average Hours overtime</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;For figure 2, it features the same chart except colour. The colour of the points is dependent on the negative emotions category.&lt;/li&gt;
-      &lt;li&gt;Luxemburg continues achieving the highest GDP per capita among the 47 participant economies, achieving it with working hours less than 40.&lt;/li&gt;
-      &lt;li&gt;Majority of the countries achieved excellent and good category rating for Negative emotions&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>For figure 2, it features the same chart except colour. The colour of the points is dependent on the negative emotions category.</li>
+      <li>Luxemburg continues achieving the highest GDP per capita among the 47 participant economies, achieving it with working hours less than 40.</li>
+      <li>Majority of the countries achieved excellent and good category rating for Negative emotions</li>
+    </ul>
+  </div>
+</div>
 
 ---
 class: center, middle, inverse
 ## Heat Maps of Economies based on Negative Emotions rating
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -274,33 +278,33 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Negative Emotions Heatmap
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot3.jpeg" width="500px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 4: heat map of negative effect for Singapore and OECD Economies from 2013-2015&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot3.jpeg" width="500px">
+      <figcaption style="text-align: left;">Figure 4: heat map of negative effect for Singapore and OECD Economies from 2013-2015</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Figure 4 shows heat map of the economies in the data set from 2013 to 2015 for negative emotions.&lt;/li&gt;
-      &lt;li&gt;Colour spectrum ranges from green to red for negative affect values, whereby the higher value will produce a red colour and vice versa.&lt;/li&gt;
-      &lt;li&gt;Grey colour indicates NA due to lack of data.&lt;/li&gt;
-      &lt;li&gt;Heat maps show that most economies fare well for their negative emotions from 2013 to 2015.&lt;/li&gt;
-      &lt;li&gt;Singapore performed relatively well for achieving low negativity rating than most of its peers.&lt;/li&gt;
-      &lt;li&gt;Notable mention for high negativity is Greece in 2013.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>Figure 4 shows heat map of the economies in the data set from 2013 to 2015 for negative emotions.</li>
+      <li>Colour spectrum ranges from green to red for negative affect values, whereby the higher value will produce a red colour and vice versa.</li>
+      <li>Grey colour indicates NA due to lack of data.</li>
+      <li>Heat maps show that most economies fare well for their negative emotions from 2013 to 2015.</li>
+      <li>Singapore performed relatively well for achieving low negativity rating than most of its peers.</li>
+      <li>Notable mention for high negativity is Greece in 2013.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -324,31 +328,31 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Negative Emotions Heatmap
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot3.jpeg" width="500px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 4: heat map of negative effect for Singapore and OECD Economies from 2013-2015&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot3.jpeg" width="500px">
+      <figcaption style="text-align: left;">Figure 4: heat map of negative effect for Singapore and OECD Economies from 2013-2015</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;For Greece unhappiness in Figure 4, Greece all time high unhappiness can be attributed to its government debt crisis, starting from the aftermath of the Great Recession. &lt;/li&gt;
-      &lt;li&gt;Complicating this was Greece Government's poor management of its spending, worsening the deficit.&lt;/li&gt;
-      &lt;li&gt;Greece lacked transparency in producing economic and financial, producing highly questionable data.&lt;/li&gt;
-      &lt;li&gt;Greece was also part of the Eurozone which meant it cannot make its own decision-making for adjusting its monetary policy&lt;/li&gt;
-      &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>For Greece unhappiness in Figure 4, Greece all time high unhappiness can be attributed to its government debt crisis, starting from the aftermath of the Great Recession. </li>
+      <li>Complicating this was Greece Government's poor management of its spending, worsening the deficit.</li>
+      <li>Greece lacked transparency in producing economic and financial, producing highly questionable data.</li>
+      <li>Greece was also part of the Eurozone which meant it cannot make its own decision-making for adjusting its monetary policy</li>
+      </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -372,30 +376,30 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Negative Emotions Heatmap
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot3.jpeg" width="500px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 4: heat map of negative effect for Singapore and OECD Economies from 2013-2015&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot3.jpeg" width="500px">
+      <figcaption style="text-align: left;">Figure 4: heat map of negative effect for Singapore and OECD Economies from 2013-2015</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;As the crisis spirals out of control, Greece was forced to engage in multiple bailout programmes and adopt tough austerity measures.
-      &lt;li&gt;Many income levels declined, standards of living fell and unemployment levels rose.&lt;/li&gt;
-      &lt;li&gt;Traditional dominant 2-party system ceased ending single government rule and transforming it to coalition government rule.&lt;/li&gt; 
-      &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>As the crisis spirals out of control, Greece was forced to engage in multiple bailout programmes and adopt tough austerity measures.
+      <li>Many income levels declined, standards of living fell and unemployment levels rose.</li>
+      <li>Traditional dominant 2-party system ceased ending single government rule and transforming it to coalition government rule.</li> 
+      </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -419,31 +423,31 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Negative Emotions Heatmap
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot4.jpeg" width="520px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 4: Heat map of negative effect for Singapore and OECD Economies from 2016-2017&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot4.jpeg" width="520px">
+      <figcaption style="text-align: left;">Figure 4: Heat map of negative effect for Singapore and OECD Economies from 2016-2017</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Figure 4 shows a heat map of the economies in the data set from 2016 to 2017 for negative emotions.&lt;/li&gt;
-      &lt;li&gt;Colour spectrum in the Heat maps show that most economies have higher negative emotions from 2016 and 2017 than 2013 to 2015.&lt;/li&gt;
-      &lt;li&gt;Singapore continues showing consistency for low negative emotions rating with slight increase of negativity in 2017.&lt;/li&gt;
-      &lt;li&gt;United Kingdom (UK) has highest negative emotion rating in the graph in 2016, possibly attributed to Brexit referendum. A divisive issue economically, politically and socially.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>Figure 4 shows a heat map of the economies in the data set from 2016 to 2017 for negative emotions.</li>
+      <li>Colour spectrum in the Heat maps show that most economies have higher negative emotions from 2016 and 2017 than 2013 to 2015.</li>
+      <li>Singapore continues showing consistency for low negative emotions rating with slight increase of negativity in 2017.</li>
+      <li>United Kingdom (UK) has highest negative emotion rating in the graph in 2016, possibly attributed to Brexit referendum. A divisive issue economically, politically and socially.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -467,31 +471,31 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Negative Emotions Heatmap
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot4.jpeg" width="520px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 4: Heat map of negative effect for Singapore and OECD Economies from 2016-2017&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot4.jpeg" width="520px">
+      <figcaption style="text-align: left;">Figure 4: Heat map of negative effect for Singapore and OECD Economies from 2016-2017</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;For UK, Brexit in 2016 was a national controversial issue. It saw UK's exit from the European Union (EU), overseen by multiple Prime ministers from David Cameroon to Boris Johnson.&lt;/li&gt;
-      &lt;li&gt;UK and many other European countries believed Europe Regionalisation will promote better peace, citizen well-being, economic prosperity and security.&lt;/li&gt;
-      &lt;li&gt;However, many Brits felt being an EU member made them worse off and felt it would be better to leave than remain.&lt;/li&gt;
-      &lt;li&gt;This was particularly following mass immigration from conflicts zones in Arab regions to Europe, raising security concerns among people and nationalism among conservatives.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>For UK, Brexit in 2016 was a national controversial issue. It saw UK's exit from the European Union (EU), overseen by multiple Prime ministers from David Cameroon to Boris Johnson.</li>
+      <li>UK and many other European countries believed Europe Regionalisation will promote better peace, citizen well-being, economic prosperity and security.</li>
+      <li>However, many Brits felt being an EU member made them worse off and felt it would be better to leave than remain.</li>
+      <li>This was particularly following mass immigration from conflicts zones in Arab regions to Europe, raising security concerns among people and nationalism among conservatives.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -515,31 +519,31 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Negative Emotions Heatmap
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot5.jpeg" width="500px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 5: Heat map of negative effect for Singapore and OECD Economies from 2018-2019&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot5.jpeg" width="500px">
+      <figcaption style="text-align: left;">Figure 5: Heat map of negative effect for Singapore and OECD Economies from 2018-2019</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Figure 5 shows a heat map of the economies in the data set from 2018 to 2019 for negative emotions.&lt;/li&gt;
-      &lt;li&gt;Colour spectrum in the Heat maps show slight improvements for most economies for negative emotions from 2018 and 2019 than 2016 to 2017.&lt;/li&gt;
-      &lt;li&gt;Singapore saw improvements and achieved a green colour rating for negative emotions rating again in 2018, compared to 2017 before dropping in 2019.&lt;/li&gt;
-      &lt;li&gt;Notable mention is Italy with highest negative emotion rating in the graph in 2018.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>Figure 5 shows a heat map of the economies in the data set from 2018 to 2019 for negative emotions.</li>
+      <li>Colour spectrum in the Heat maps show slight improvements for most economies for negative emotions from 2018 and 2019 than 2016 to 2017.</li>
+      <li>Singapore saw improvements and achieved a green colour rating for negative emotions rating again in 2018, compared to 2017 before dropping in 2019.</li>
+      <li>Notable mention is Italy with highest negative emotion rating in the graph in 2018.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -563,35 +567,35 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Negative Emotions Heatmap
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot5.jpeg" width="500px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 5: Heat map of negative effect for Singapore and OECD Economies from 2018-2019&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot5.jpeg" width="500px">
+      <figcaption style="text-align: left;">Figure 5: Heat map of negative effect for Singapore and OECD Economies from 2018-2019</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt; For Italy, it was largely attributed to its political crisis of forming a stable government and economic recession from its poor economic growth.&lt;/li&gt;
-      &lt;li&gt;Similar to Greece, it was linked to aftermath of 2008 Great Financial Crisis. &lt;/li&gt;
-      &lt;li&gt;It has long struggled with economic stagnation, stemming from low GDP growth as it loses competitive edge in the global economy, making it harder to service public debt without undertaking austerity measures.&lt;/li&gt;
-      &lt;li&gt;Complicating matters was failure to produce a stable government to handle Italy's economic issues, resulting in hung parliament, a country without proper government.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li> For Italy, it was largely attributed to its political crisis of forming a stable government and economic recession from its poor economic growth.</li>
+      <li>Similar to Greece, it was linked to aftermath of 2008 Great Financial Crisis. </li>
+      <li>It has long struggled with economic stagnation, stemming from low GDP growth as it loses competitive edge in the global economy, making it harder to service public debt without undertaking austerity measures.</li>
+      <li>Complicating matters was failure to produce a stable government to handle Italy's economic issues, resulting in hung parliament, a country without proper government.</li>
+    </ul>
+  </div>
+</div>
 
 ---
 class: center, middle, inverse
 ## Heat Maps of Economies based on Positive Emotions rating
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -615,32 +619,32 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Positive Emotions Heat Map
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot6.jpeg" width="500px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 6: Heat map of Positive effect for Singapore and OECD Economies from 2013-2015&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot6.jpeg" width="500px">
+      <figcaption style="text-align: left;">Figure 6: Heat map of Positive effect for Singapore and OECD Economies from 2013-2015</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Figure 6 shows a heat map of the economies in the data set from 2013 to 2015 for Positive Emotions.&lt;/li&gt;
-      &lt;li&gt;Colour spectrum in the Heat maps starts from red for poor positive emotions rating to green for higher positive emotions rating. Grey indicates NA due to absence of data.&lt;/li&gt;
-      &lt;li&gt;Majority out of 47 economies fared well for positive emotions rating [remember to insert reason].&lt;/li&gt;
-      &lt;li&gt;Notable mention is Turkey which has lowest positive emotion rating in the graph starting from 2014 in the heat map from 2013 to 2015.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>Figure 6 shows a heat map of the economies in the data set from 2013 to 2015 for Positive Emotions.</li>
+      <li>Colour spectrum in the Heat maps starts from red for poor positive emotions rating to green for higher positive emotions rating. Grey indicates NA due to absence of data.</li>
+      <li>Majority out of 47 economies fared well for positive emotions rating [remember to insert reason].</li>
+      <li>Notable mention is Turkey which has lowest positive emotion rating in the graph starting from 2014 in the heat map from 2013 to 2015.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -664,31 +668,31 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Positive Emotions Heat Map
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot7.jpeg" width="460px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 7: Heat map of Positive effect for Singapore and OECD Economies from 2016-2017&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot7.jpeg" width="460px">
+      <figcaption style="text-align: left;">Figure 7: Heat map of Positive effect for Singapore and OECD Economies from 2016-2017</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Figure 7 shows a heat map of the economies in the data set from 2016 to 2017 for Positive emotions.&lt;/li&gt;
-      &lt;li&gt;Colour spectrum in the Heat maps show Turkey continuing to achieve lowest positive emotions rating among the 47 economies.&lt;/li&gt;
-      &lt;li&gt;North Macedonia saw a drop of its positive emotions rating in 2017 compared to 2016.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>Figure 7 shows a heat map of the economies in the data set from 2016 to 2017 for Positive emotions.</li>
+      <li>Colour spectrum in the Heat maps show Turkey continuing to achieve lowest positive emotions rating among the 47 economies.</li>
+      <li>North Macedonia saw a drop of its positive emotions rating in 2017 compared to 2016.</li>
+    </ul>
+  </div>
+</div>
 
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -712,26 +716,26 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Positive Emotions Heat Map
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot8.jpeg" width="470px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 8: Heat map of Positive effect for Singapore and OECD Economies from 2018-2019&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot8.jpeg" width="470px">
+      <figcaption style="text-align: left;">Figure 8: Heat map of Positive effect for Singapore and OECD Economies from 2018-2019</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Figure 8 shows a heat map of the economies in the data set from 2018 to 2019 for Positive emotions.&lt;/li&gt;
-      &lt;li&gt;Turkey continues showing persistence in attaining low positive emotions rating since 2014, a worrying trend of concern.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>Figure 8 shows a heat map of the economies in the data set from 2018 to 2019 for Positive emotions.</li>
+      <li>Turkey continues showing persistence in attaining low positive emotions rating since 2014, a worrying trend of concern.</li>
+    </ul>
+  </div>
+</div>
 
 ---
 #### Case of Turkey
@@ -749,10 +753,10 @@ class: center, middle, inverse
 
 ---
 class: center, middle, inverse
-## Does Economic Environment affect Work &amp; Happiness?
+## Does Economic Environment affect Work & Happiness?
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -776,32 +780,32 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
-#### Insight 1: Economic Environment affects work &amp; Happiness
+#### Insight 1: Economic Environment affects work & Happiness
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot9.jpeg" width="600px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 9: Log GDP per Capita against annual average working hours&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot9.jpeg" width="600px">
+      <figcaption style="text-align: left;">Figure 9: Log GDP per Capita against annual average working hours</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Figure 9 shows Scatter plot of Log GDP per Capita against Annual Average Hours for OECD countries &amp; Singapore. From figure 9, there are 5 data clusters.&lt;/li&gt;
-      &lt;li&gt;First cluster is Netherlands with less than 30 annual average working hours.&lt;/li&gt;
-      &lt;li&gt;Second is the biggest cluster containing Denmark, Ireland, Luxemburg, Chile and majority of data points from above 30 hours to less than 45 hours.&lt;/li&gt;
-      &lt;li&gt;Third cluster contains points from Colombia. Fourth is points from Turkey and last cluster is Singapore&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>Figure 9 shows Scatter plot of Log GDP per Capita against Annual Average Hours for OECD countries & Singapore. From figure 9, there are 5 data clusters.</li>
+      <li>First cluster is Netherlands with less than 30 annual average working hours.</li>
+      <li>Second is the biggest cluster containing Denmark, Ireland, Luxemburg, Chile and majority of data points from above 30 hours to less than 45 hours.</li>
+      <li>Third cluster contains points from Colombia. Fourth is points from Turkey and last cluster is Singapore</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -825,31 +829,31 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
-#### Insight 1: Economic Environment affects work &amp; Happiness
+#### Insight 1: Economic Environment affects work & Happiness
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot9.jpeg" width="600px"&gt;
-      &lt;figcaption style="text-align: centre;"&gt;Figure 9: Log GDP per Capita against annual average working hours&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot9.jpeg" width="600px">
+      <figcaption style="text-align: centre;">Figure 9: Log GDP per Capita against annual average working hours</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Netherlands is notable for having the lowest annual average working hours but still achieve higher log GDP per capita than others..&lt;/li&gt;
-      &lt;li&gt;On the other side, Singapore achieves higher log GDP per capita at a cost of much longer working hours above 40.&lt;/li&gt;
-      &lt;li&gt;At the extreme end, Turkey and Colombia worked a range of more than 45 hours but less than 50 and achieve lower log GDP per capita than Netherlands and Singapore.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>Netherlands is notable for having the lowest annual average working hours but still achieve higher log GDP per capita than others..</li>
+      <li>On the other side, Singapore achieves higher log GDP per capita at a cost of much longer working hours above 40.</li>
+      <li>At the extreme end, Turkey and Colombia worked a range of more than 45 hours but less than 50 and achieve lower log GDP per capita than Netherlands and Singapore.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -873,29 +877,29 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
-#### Insight 1: Economic Environment affects work &amp; Happiness
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: centre;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot10.jpeg" width="600px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 10: Selected countries line chart of Log GDP per capita &amp; Annual Average hours overtime&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+#### Insight 1: Economic Environment affects work & Happiness
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: centre;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot10.jpeg" width="600px">
+      <figcaption style="text-align: left;">Figure 10: Selected countries line chart of Log GDP per capita & Annual Average hours overtime</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Selecting random 8 countries with annual average hours ranging from less than 30 to close to 50, a line chart is plotted with Log GDP per capita overtime in figure 10.&lt;/li&gt;
-      &lt;li&gt;Size of points is dependent on annual average hours.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>Selecting random 8 countries with annual average hours ranging from less than 30 to close to 50, a line chart is plotted with Log GDP per capita overtime in figure 10.</li>
+      <li>Size of points is dependent on annual average hours.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -919,30 +923,30 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
-#### Insight 1: Economic Environment affects work &amp; Happiness
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot10.jpeg" width="600px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 10: Selected countries line chart of Log GDP per capita &amp; Annual Average hours overtime&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+#### Insight 1: Economic Environment affects work & Happiness
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot10.jpeg" width="600px">
+      <figcaption style="text-align: left;">Figure 10: Selected countries line chart of Log GDP per capita & Annual Average hours overtime</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Countries with high log GDP per capita, most of them have working hours less than 40 and are from Europe and Scandinavian regions, only Singapore is an exception from South-East Asia region.&lt;/li&gt;
-      &lt;li&gt;On the other side, Singapore achieves higher log GDP per capita at a cost of much longer working hours above 40.&lt;/li&gt;
-      &lt;li&gt;Turkey from Middle East region, Chile and Colombia from Latin America have longer working hours than countries like Luxemburg or Ireland and a much lower log GDP per capita.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>Countries with high log GDP per capita, most of them have working hours less than 40 and are from Europe and Scandinavian regions, only Singapore is an exception from South-East Asia region.</li>
+      <li>On the other side, Singapore achieves higher log GDP per capita at a cost of much longer working hours above 40.</li>
+      <li>Turkey from Middle East region, Chile and Colombia from Latin America have longer working hours than countries like Luxemburg or Ireland and a much lower log GDP per capita.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -966,31 +970,31 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
-#### Insight 1: Economic Environment affects work &amp; Happiness
+#### Insight 1: Economic Environment affects work & Happiness
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot11.jpeg" width="600px"&gt;
-      &lt;figcaption style="text-align: centre;"&gt;Figure 11: Log GDP per Capita against Life Ladder&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot11.jpeg" width="600px">
+      <figcaption style="text-align: centre;">Figure 11: Log GDP per Capita against Life Ladder</figcaption>
+    </figure>
+  </div>
 
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;In figure 11, it shows a scatter plot where Log GDP per Capita is plotted against Life Ladder and a positive correlation can be spotted.&lt;/li&gt;
-      &lt;li&gt;The trend is the higher log GDP per capita, the better life ladder ratings.&lt;/li&gt;
-      &lt;li&gt;South Africa was the lowest in 2013 while Luxemburg in 2019 and Finland in 2018 for highest log GDP per capita and life ladder respectively.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>In figure 11, it shows a scatter plot where Log GDP per Capita is plotted against Life Ladder and a positive correlation can be spotted.</li>
+      <li>The trend is the higher log GDP per capita, the better life ladder ratings.</li>
+      <li>South Africa was the lowest in 2013 while Luxemburg in 2019 and Finland in 2018 for highest log GDP per capita and life ladder respectively.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -1014,31 +1018,31 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
-#### Insight 1: Economic Environment affects work &amp; Happiness
+#### Insight 1: Economic Environment affects work & Happiness
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: centre;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot12.jpeg" width="470px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 12: Log GDP per Capita against Life Ladder&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: centre;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot12.jpeg" width="470px">
+      <figcaption style="text-align: left;">Figure 12: Log GDP per Capita against Life Ladder</figcaption>
+    </figure>
+  </div>
 
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;In figure 12, it shows Log GDP per Capita of top and bottom 3 economies over 2013 to 2019 where each point's shape is based on their Positive Affect Category assigned&lt;/li&gt;
-      &lt;li&gt;From figure 12, top 3 log GDP per capita countries achieved excellent and good positive affect category ratings.&lt;/li&gt;
-      &lt;li&gt;Interestingly, the bottom 3 log GDP per capita countries also achieved excellent and good positive categorical ratings.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>In figure 12, it shows Log GDP per Capita of top and bottom 3 economies over 2013 to 2019 where each point's shape is based on their Positive Affect Category assigned</li>
+      <li>From figure 12, top 3 log GDP per capita countries achieved excellent and good positive affect category ratings.</li>
+      <li>Interestingly, the bottom 3 log GDP per capita countries also achieved excellent and good positive categorical ratings.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -1062,31 +1066,31 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
-#### Insight 1: Economic Environment affects work &amp; Happiness
+#### Insight 1: Economic Environment affects work & Happiness
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot12.jpeg" width="470px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 12: Log GDP per Capita against Life Ladder&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot12.jpeg" width="470px">
+      <figcaption style="text-align: left;">Figure 12: Log GDP per Capita against Life Ladder</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Based on these observations in figure 12, This indicates that people from different countries have their unique interpretations for what makes them happy.&lt;/li&gt;
-      &lt;li&gt;From figure 12, top 3 log GDP per capita countries achieved excellent and good positive affect category ratings.&lt;/li&gt;
-      &lt;li&gt;It could be better life opportunities or be contented with simple things in life like peace and stability, particularly in countries with a dark history of conflicts like Colombia and South Africa.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>Based on these observations in figure 12, This indicates that people from different countries have their unique interpretations for what makes them happy.</li>
+      <li>From figure 12, top 3 log GDP per capita countries achieved excellent and good positive affect category ratings.</li>
+      <li>It could be better life opportunities or be contented with simple things in life like peace and stability, particularly in countries with a dark history of conflicts like Colombia and South Africa.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -1110,31 +1114,31 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
-#### Insight 1: Economic Environment affects work &amp; Happiness
+#### Insight 1: Economic Environment affects work & Happiness
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot12.jpeg" width="470px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 12: Log GDP per Capita against Life Ladder&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot12.jpeg" width="470px">
+      <figcaption style="text-align: left;">Figure 12: Log GDP per Capita against Life Ladder</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;In figure 12, it shows Log GDP per Capita of top and bottom 3 economies over 2013 to 2019 where each point's shape is based on their Positive Affect Category assigned&lt;/li&gt;
-      &lt;li&gt;From figure 12, top 3 log GDP per capita countries achieved excellent and good positive affect category ratings.&lt;/li&gt;
-      &lt;li&gt;Interestingly, the bottom 3 log GDP per capita countries also achieved excellent and good positive categorical ratings.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>In figure 12, it shows Log GDP per Capita of top and bottom 3 economies over 2013 to 2019 where each point's shape is based on their Positive Affect Category assigned</li>
+      <li>From figure 12, top 3 log GDP per capita countries achieved excellent and good positive affect category ratings.</li>
+      <li>Interestingly, the bottom 3 log GDP per capita countries also achieved excellent and good positive categorical ratings.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -1158,31 +1162,31 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
-#### Insight 1: Economic Environment affects work &amp; Happiness
+#### Insight 1: Economic Environment affects work & Happiness
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot13.jpeg" width="470px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 13: Log GDP per Capita against Life Ladder&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot13.jpeg" width="470px">
+      <figcaption style="text-align: left;">Figure 13: Log GDP per Capita against Life Ladder</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Based on these observations in figure 12, This indicates that people from different countries have their unique interpretations for what makes them happy.&lt;/li&gt;
-      &lt;li&gt;From figure 12, top 3 log GDP per capita countries achieved excellent and good positive affect category ratings.&lt;/li&gt;
-      &lt;li&gt;It could be better life opportunities or be contented with simple things in life like peace and stability, particularly in countries with a dark history of conflicts like Colombia and South Africa.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>Based on these observations in figure 12, This indicates that people from different countries have their unique interpretations for what makes them happy.</li>
+      <li>From figure 12, top 3 log GDP per capita countries achieved excellent and good positive affect category ratings.</li>
+      <li>It could be better life opportunities or be contented with simple things in life like peace and stability, particularly in countries with a dark history of conflicts like Colombia and South Africa.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -1206,31 +1210,31 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
-#### Insight 1: Economic Environment affects work &amp; Happiness
+#### Insight 1: Economic Environment affects work & Happiness
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot14.jpeg" width="470px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 14: Log GDP per Capita against Life Ladder&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot14.jpeg" width="470px">
+      <figcaption style="text-align: left;">Figure 14: Log GDP per Capita against Life Ladder</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Based on these observations in figure 12, This indicates that people from different countries have their unique interpretations for what makes them happy.&lt;/li&gt;
-      &lt;li&gt;From figure 12, top 3 log GDP per capita countries achieved excellent and good positive affect category ratings.&lt;/li&gt;
-      &lt;li&gt;It could be better life opportunities or be contented with simple things in life like peace and stability, particularly in countries with a dark history of conflicts like Colombia and South Africa.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>Based on these observations in figure 12, This indicates that people from different countries have their unique interpretations for what makes them happy.</li>
+      <li>From figure 12, top 3 log GDP per capita countries achieved excellent and good positive affect category ratings.</li>
+      <li>It could be better life opportunities or be contented with simple things in life like peace and stability, particularly in countries with a dark history of conflicts like Colombia and South Africa.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -1254,31 +1258,31 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
- #### Insight 1: Economic Environment affects work &amp; Happiness
+ #### Insight 1: Economic Environment affects work & Happiness
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot15.jpeg" width="470px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 15: Log GDP per Capita against Life Ladder&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot15.jpeg" width="470px">
+      <figcaption style="text-align: left;">Figure 15: Log GDP per Capita against Life Ladder</figcaption>
+    </figure>
+  </div>
 
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Based on these observations in figure 12, This indicates that people from different countries have their unique interpretations for what makes them happy.&lt;/li&gt;
-      &lt;li&gt;From figure 12, top 3 log GDP per capita countries achieved excellent and good positive affect category ratings.&lt;/li&gt;
-      &lt;li&gt;It could be better life opportunities or be contented with simple things in life like peace and stability, particularly in countries with a dark history of conflicts like Colombia and South Africa.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>Based on these observations in figure 12, This indicates that people from different countries have their unique interpretations for what makes them happy.</li>
+      <li>From figure 12, top 3 log GDP per capita countries achieved excellent and good positive affect category ratings.</li>
+      <li>It could be better life opportunities or be contented with simple things in life like peace and stability, particularly in countries with a dark history of conflicts like Colombia and South Africa.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -1302,35 +1306,35 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
-#### Insight 1: Economic Environment affects work &amp; Happiness
+#### Insight 1: Economic Environment affects work & Happiness
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot16.jpeg" width="470px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 16: Log GDP per Capita against Life Ladder&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot16.jpeg" width="470px">
+      <figcaption style="text-align: left;">Figure 16: Log GDP per Capita against Life Ladder</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Based on these observations in figure 12, This indicates that people from different countries have their unique interpretations for what makes them happy.&lt;/li&gt;
-      &lt;li&gt;From figure 12, top 3 log GDP per capita countries achieved excellent and good positive affect category ratings.&lt;/li&gt;
-      &lt;li&gt;It could be better life opportunities or be contented with simple things in life like peace and stability, particularly in countries with a dark history of conflicts like Colombia and South Africa.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>Based on these observations in figure 12, This indicates that people from different countries have their unique interpretations for what makes them happy.</li>
+      <li>From figure 12, top 3 log GDP per capita countries achieved excellent and good positive affect category ratings.</li>
+      <li>It could be better life opportunities or be contented with simple things in life like peace and stability, particularly in countries with a dark history of conflicts like Colombia and South Africa.</li>
+    </ul>
+  </div>
+</div>
 
 ---
 class: center, middle, inverse
 # Long working hours does not mean poor happiness
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -1354,31 +1358,31 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Insight 2: Long working hours does not mean poor happiness
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot17.jpeg" width="550px"&gt;
-      &lt;figcaption style="text-align: centre;"&gt;Figure 17: Top 5 countries with longest working hours and positive affect category&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot17.jpeg" width="550px">
+      <figcaption style="text-align: centre;">Figure 17: Top 5 countries with longest working hours and positive affect category</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Based on these observations in figure 12, This indicates that people from different countries have their unique interpretations for what makes them happy.&lt;/li&gt;
-      &lt;li&gt;From figure 12, top 3 log GDP per capita countries achieved excellent and good positive affect category ratings.&lt;/li&gt;
-      &lt;li&gt;It could be better life opportunities or be contented with simple things in life like peace and stability, particularly in countries with a dark history of conflicts like Colombia and South Africa.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>Based on these observations in figure 12, This indicates that people from different countries have their unique interpretations for what makes them happy.</li>
+      <li>From figure 12, top 3 log GDP per capita countries achieved excellent and good positive affect category ratings.</li>
+      <li>It could be better life opportunities or be contented with simple things in life like peace and stability, particularly in countries with a dark history of conflicts like Colombia and South Africa.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -1402,31 +1406,31 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Insight 2: Long working hours does not mean poor happiness
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot18.jpeg" width="550px"&gt;
-      &lt;figcaption style="text-align: centre;"&gt;Figure 18: Life ladder overtime for top 5 longest working hours for countries&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot18.jpeg" width="550px">
+      <figcaption style="text-align: centre;">Figure 18: Life ladder overtime for top 5 longest working hours for countries</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Based on these observations in figure 12, This indicates that people from different countries have their unique interpretations for what makes them happy.&lt;/li&gt;
-      &lt;li&gt;From figure 12, top 3 log GDP per capita countries achieved excellent and good positive affect category ratings.&lt;/li&gt;
-      &lt;li&gt;It could be better life opportunities or be contented with simple things in life like peace and stability, particularly in countries with a dark history of conflicts like Colombia and South Africa.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>Based on these observations in figure 12, This indicates that people from different countries have their unique interpretations for what makes them happy.</li>
+      <li>From figure 12, top 3 log GDP per capita countries achieved excellent and good positive affect category ratings.</li>
+      <li>It could be better life opportunities or be contented with simple things in life like peace and stability, particularly in countries with a dark history of conflicts like Colombia and South Africa.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -1450,26 +1454,26 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Case of Singapore
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot19.1.jpeg" width="400px"&gt;
-      &lt;figcaption style="text-align: centre;"&gt;Figure 19.1: Singapore's Annual Average working hours from 2013-2019&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
-  &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot19.2.jpeg" width="400px"&gt;
-      &lt;figcaption style="text-align: centre;"&gt;Figure 19.2: Singapore's Positive Emotions from 2013-2019&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot19.1.jpeg" width="400px">
+      <figcaption style="text-align: centre;">Figure 19.1: Singapore's Annual Average working hours from 2013-2019</figcaption>
+    </figure>
+  </div>
+  <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot19.2.jpeg" width="400px">
+      <figcaption style="text-align: centre;">Figure 19.2: Singapore's Positive Emotions from 2013-2019</figcaption>
+    </figure>
+  </div>
   
 ---
-#### Observations from Fig 19.1 &amp; 19.2
+#### Observations from Fig 19.1 & 19.2
 
 * Based on Figure 19.1, Singapore achieved a respectable life ladder rating above 6 to slightly above 7 from 2013 to 2019, peaking in year 2014.
 
@@ -1480,7 +1484,7 @@ class: center, middle, inverse
 * Positive Emotions rating show generally positive trend from 2013 to 2019.
   
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -1504,28 +1508,28 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Case of Singapore
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot19.3.jpeg" width="450px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 19.3: Life ladder overtime for top 5 longest working hours countries&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot19.3.jpeg" width="450px">
+      <figcaption style="text-align: left;">Figure 19.3: Life ladder overtime for top 5 longest working hours countries</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Based on these observations in figure 12, This indicates that people from different countries have their unique interpretations for what makes them happy.&lt;/li&gt;
-      &lt;li&gt;From figure 12, top 3 log GDP per capita countries achieved excellent and good positive affect category ratings.&lt;/li&gt;
-      &lt;li&gt;It could be better life opportunities or be contented with simple things in life like peace and stability, particularly in countries with a dark history of conflicts like Colombia and South Africa.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>Based on these observations in figure 12, This indicates that people from different countries have their unique interpretations for what makes them happy.</li>
+      <li>From figure 12, top 3 log GDP per capita countries achieved excellent and good positive affect category ratings.</li>
+      <li>It could be better life opportunities or be contented with simple things in life like peace and stability, particularly in countries with a dark history of conflicts like Colombia and South Africa.</li>
+    </ul>
+  </div>
+</div>
 
 ---
 #### Insights From Singapore
@@ -1550,14 +1554,14 @@ class: center, middle, inverse
 ---
 #### Case of Colombia, Mexico and Costa Rica
 
-  &lt;!-- Your image and caption --&gt;
-  &lt;figure style="text-align: centre;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot20.1.jpeg" width="1500px"&gt;
-      &lt;figcaption style="text-align: centre;"&gt;Figure 20.1: Colombia's Annual Average working hours from 2013-2019&lt;/figcaption&gt;
-    &lt;/figure&gt;
+  <!-- Your image and caption -->
+  <figure style="text-align: centre;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot20.1.jpeg" width="1500px">
+      <figcaption style="text-align: centre;">Figure 20.1: Colombia's Annual Average working hours from 2013-2019</figcaption>
+    </figure>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -1581,23 +1585,23 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Case of Colombia, Mexico and Costa Rica
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot20.2.jpeg" width="400px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 20.2: Colombia's Positive Emotions from 2013-2019&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
-  &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot20.3.jpeg" width="400px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 20.3: Colombia's Negative Emotions from 2013-2019&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot20.2.jpeg" width="400px">
+      <figcaption style="text-align: left;">Figure 20.2: Colombia's Positive Emotions from 2013-2019</figcaption>
+    </figure>
+  </div>
+  <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot20.3.jpeg" width="400px">
+      <figcaption style="text-align: left;">Figure 20.3: Colombia's Negative Emotions from 2013-2019</figcaption>
+    </figure>
+  </div>
 
 ---
 #### Case of Colombia, Mexico and Costa Rica
@@ -1609,7 +1613,7 @@ class: center, middle, inverse
 * Colombia's negative emotions remain generally low despite its long workig hours but there is a notable upward trend of rising unhappiness among Colombians
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -1633,31 +1637,31 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Case of Colombia, Mexico and Costa Rica
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot21.1.jpeg" width="450px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 21.1: Mexico's Annual Average working hours from 2013-2019&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot21.1.jpeg" width="450px">
+      <figcaption style="text-align: left;">Figure 21.1: Mexico's Annual Average working hours from 2013-2019</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;From figure 21.1, Mexico starts strong with a life ladder more than 7 in 2013 before facing a decline in 2014 and 2015.&lt;/li&gt;
-      &lt;li&gt;In 2016, Mexico's life ladder rebounded close to 7 but eventually declined to below 6.5 by 2019 even though it has working hours above 40.&lt;/li&gt;
-      &lt;li&gt;In figure 21.2 and 21.3 on next slide, Mexico's positive emotions are all time high with an observable upward trend while negative emotions remain relatively within range of 0.2 to slightly above 0.25. &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>From figure 21.1, Mexico starts strong with a life ladder more than 7 in 2013 before facing a decline in 2014 and 2015.</li>
+      <li>In 2016, Mexico's life ladder rebounded close to 7 but eventually declined to below 6.5 by 2019 even though it has working hours above 40.</li>
+      <li>In figure 21.2 and 21.3 on next slide, Mexico's positive emotions are all time high with an observable upward trend while negative emotions remain relatively within range of 0.2 to slightly above 0.25. </li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -1681,26 +1685,26 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Case of Colombia, Mexico and Costa Rica
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot21.3.jpeg" width="400px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 21.2: Mexico's Positive Emotions from 2013-2019&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
-  &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot21.2.jpeg" width="400px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 21.3: Mexico's Negative Emotions from 2013-2019&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot21.3.jpeg" width="400px">
+      <figcaption style="text-align: left;">Figure 21.2: Mexico's Positive Emotions from 2013-2019</figcaption>
+    </figure>
+  </div>
+  <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot21.2.jpeg" width="400px">
+      <figcaption style="text-align: left;">Figure 21.3: Mexico's Negative Emotions from 2013-2019</figcaption>
+    </figure>
+  </div>
   
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -1724,31 +1728,31 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Case of Colombia, Mexico and Costa Rica
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot22.1.jpeg" width="500px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 22.1: Life ladder overtime for top 5 longest working hours countries&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot22.1.jpeg" width="500px">
+      <figcaption style="text-align: left;">Figure 22.1: Life ladder overtime for top 5 longest working hours countries</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;In figure 22.1, Costa Rica's life ladder generally hovered above 7 with 2015 being an exception at 6.85.&lt;/li&gt;
-      &lt;li&gt;Similar to Mexico, working hours remain above 40.&lt;/li&gt;
-      &lt;li&gt;In Figure 22.2 and 22.3, Costa Rica's positive emotions are generally high with most values above 0.8, if not close to 0.8. Negative emotions remain below 0.3 from 2013 to 2017 until it spiked above 0.3 in 2018 but declined close to 0.3 in 2019.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>In figure 22.1, Costa Rica's life ladder generally hovered above 7 with 2015 being an exception at 6.85.</li>
+      <li>Similar to Mexico, working hours remain above 40.</li>
+      <li>In Figure 22.2 and 22.3, Costa Rica's positive emotions are generally high with most values above 0.8, if not close to 0.8. Negative emotions remain below 0.3 from 2013 to 2017 until it spiked above 0.3 in 2018 but declined close to 0.3 in 2019.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -1772,23 +1776,23 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Case of Colombia, Mexico and Costa Rica
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot22.3.jpeg" width="500px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 22.2: Costa Rica's Positive Emotions from 2013-2019&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
-  &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot22.2.jpeg" width="500px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 22.3: Costa Rica's Negative Emotions from 2013-2019&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot22.3.jpeg" width="500px">
+      <figcaption style="text-align: left;">Figure 22.2: Costa Rica's Positive Emotions from 2013-2019</figcaption>
+    </figure>
+  </div>
+  <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot22.2.jpeg" width="500px">
+      <figcaption style="text-align: left;">Figure 22.3: Costa Rica's Negative Emotions from 2013-2019</figcaption>
+    </figure>
+  </div>
 
 ---
 #### Insights From Case of Colombia, Mexico and Costa Rica
@@ -1824,7 +1828,7 @@ class: center, middle, inverse
 * Severance pay is financial compensation that an employer provides to employees upon employee termination from work to help transit to either a new future job or unemployment. The compensation is a one-time offer.
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -1848,30 +1852,30 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Insight 3: Working conditions matter towards happiness
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot23.jpeg" width="550px"&gt;
-      &lt;figcaption style="text-align: centre;"&gt;Figure 23: Histogram for severance pay at 1 year tenure&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot23.jpeg" width="550px">
+      <figcaption style="text-align: centre;">Figure 23: Histogram for severance pay at 1 year tenure</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;In figure 23, it shows a distribution among the 47 economies whether do they have severance pay for employees with 1 year tenure.&lt;/li&gt;
-      &lt;li&gt;Based on observations in figure 23, data is skewed-right as majority of economies do not offer severance pay for employees with 1-year tenure which is 51%.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>In figure 23, it shows a distribution among the 47 economies whether do they have severance pay for employees with 1 year tenure.</li>
+      <li>Based on observations in figure 23, data is skewed-right as majority of economies do not offer severance pay for employees with 1-year tenure which is 51%.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -1895,32 +1899,32 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Insight 3: Working conditions matter towards happiness
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot24.jpeg" width="550px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 24: Histogram for severance pay at 5 year tenure&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot24.jpeg" width="550px">
+      <figcaption style="text-align: left;">Figure 24: Histogram for severance pay at 5 year tenure</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;In figure 24, it shows a distribution among the 47 economies whether do they have severance pay for employees with 5 year tenure.&lt;/li&gt;
-      &lt;li&gt;Based on observations in figure 24, data distribution is slightly better with number of countries offering severance pay for employees at 5-year tenure falling from 23 to 17. &lt;/li&gt;
-      &lt;li&gt;5 economies offer attractive severance compensation above 20 for employees at 5-year tenure&lt;/li&gt;
-      &lt;li&gt;Despite improvements, Data remains skewed-right as relative majority of economies do not offer severance pay for employees with 5-year tenure, which is 36%.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>In figure 24, it shows a distribution among the 47 economies whether do they have severance pay for employees with 5 year tenure.</li>
+      <li>Based on observations in figure 24, data distribution is slightly better with number of countries offering severance pay for employees at 5-year tenure falling from 23 to 17. </li>
+      <li>5 economies offer attractive severance compensation above 20 for employees at 5-year tenure</li>
+      <li>Despite improvements, Data remains skewed-right as relative majority of economies do not offer severance pay for employees with 5-year tenure, which is 36%.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -1944,29 +1948,29 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Insight 3: Working conditions matter towards happiness
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot25.jpeg" width="550px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 25: Histogram for severance pay at 10 year tenure&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot25.jpeg" width="550px">
+      <figcaption style="text-align: left;">Figure 25: Histogram for severance pay at 10 year tenure</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;In figure 25, it shows a distribution among the 47 economies whether do they have severance pay for employees with 10 year tenure.&lt;/li&gt;
-      &lt;li&gt;Based on observations in figure 25, number of economies who do not offer severance pay at 10-year tenure remains unchanged relative to 5-year tenure. &lt;/li&gt;
-      &lt;li&gt;5 economies offer attractive severance compensation above 20 for employees at 5-year tenure&lt;/li&gt;
-      &lt;li&gt;Data remains skewed-right as relative majority of economies do not offer severance pay for employees with 10-year.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>In figure 25, it shows a distribution among the 47 economies whether do they have severance pay for employees with 10 year tenure.</li>
+      <li>Based on observations in figure 25, number of economies who do not offer severance pay at 10-year tenure remains unchanged relative to 5-year tenure. </li>
+      <li>5 economies offer attractive severance compensation above 20 for employees at 5-year tenure</li>
+      <li>Data remains skewed-right as relative majority of economies do not offer severance pay for employees with 10-year.</li>
+    </ul>
+  </div>
+</div>
 
 ---
 #### Severance pay by tenure Insights
@@ -1982,27 +1986,27 @@ class: center, middle, inverse
 ---
 #### Insight 3: Working conditions matter towards happiness
 
-&lt;div&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot26.jpeg" width="700px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 26: Countries with severance pay at 1-year tenure&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div>
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot26.jpeg" width="700px">
+      <figcaption style="text-align: left;">Figure 26: Countries with severance pay at 1-year tenure</figcaption>
+    </figure>
+  </div>
   
 ---
 #### Insight 3: Working conditions matter towards happiness
 
 * Plotting economies with severance pay of 1 year tenure in a dot plot in figure 26, the purpose is to compare them against one another in terms of the severance pay they offer to employees
 
-* Mexico has the highest severance pay at 1 year tenure at approximately 14.6, rounding to the nearest decimal place. This is followed by Lithuania and Greece.&lt;/li&gt;
+* Mexico has the highest severance pay at 1 year tenure at approximately 14.6, rounding to the nearest decimal place. This is followed by Lithuania and Greece.</li>
 
 * Interestingly, Brazil does not have a universal severance pay across the country. In Sao Paulo, it is 1.7 while in Rio de Janeiro, it is 1.6.
 
 * For France, the graph shows 2 values of 0.9 and 1.1 respectively. These 2 values are due to an increase in severance pay in 2019 from 0.9 to 1.1.
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -2026,32 +2030,32 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Insight 3: Working conditions matter towards happiness
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot27.jpeg" width="500px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 27: countries with severance pay at 5-year tenure&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot27.jpeg" width="500px">
+      <figcaption style="text-align: left;">Figure 27: countries with severance pay at 5-year tenure</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-    &lt;li&gt;In figure 27, it shows a dot plot of the economies who offer severance pay to employees at 5 year tenure to show how do they compare against others.&lt;/li&gt;
-    &lt;li&gt;Turkey offers the highest severance pay at 5-year employee tenure, tieing with Israel and Chile although interestingly neither of the latter 2 have long working hours like Turkey.&lt;/li&gt;
-    &lt;li&gt;At 5-year tenure, Lithuania saw reduction of severance pay to the nearest decimal place from 17.3 to 8.7 in 2019 while France saw reduction from 10.8 to 8.7 in 2019.&lt;/li&gt;
-    &lt;li&gt;Slovenia saw reduction from 2014 onwards from 5.4 to 4.3. Portugal as well from 14.3 to 8.6.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+    <li>In figure 27, it shows a dot plot of the economies who offer severance pay to employees at 5 year tenure to show how do they compare against others.</li>
+    <li>Turkey offers the highest severance pay at 5-year employee tenure, tieing with Israel and Chile although interestingly neither of the latter 2 have long working hours like Turkey.</li>
+    <li>At 5-year tenure, Lithuania saw reduction of severance pay to the nearest decimal place from 17.3 to 8.7 in 2019 while France saw reduction from 10.8 to 8.7 in 2019.</li>
+    <li>Slovenia saw reduction from 2014 onwards from 5.4 to 4.3. Portugal as well from 14.3 to 8.6.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -2075,31 +2079,31 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Insight 3: Working conditions matter towards happiness
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot28.jpeg" width="500px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 28: Countries with severance pay at 10-year tenure&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot28.jpeg" width="500px">
+      <figcaption style="text-align: left;">Figure 28: Countries with severance pay at 10-year tenure</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Similar to figure 27, figure 28 shows a dot plot of the economies who offer severance pay to employees at 10 year tenure.&lt;/li&gt;
-      &lt;li&gt;At 10-year tenure, Lithuania severance pay dropped in 2019 from 21.7 to 8.7. Portugal dropped from 28.6 to 17.1 from 2013 onwards while France dropped from 10.8 to 8.7 in 2019.&lt;/li&gt;
-      &lt;li&gt;It could be better life opportunities or be contented with simple things in life like peace and stability, particularly in countries with a dark history of conflicts like Colombia and South Africa.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>Similar to figure 27, figure 28 shows a dot plot of the economies who offer severance pay to employees at 10 year tenure.</li>
+      <li>At 10-year tenure, Lithuania severance pay dropped in 2019 from 21.7 to 8.7. Portugal dropped from 28.6 to 17.1 from 2013 onwards while France dropped from 10.8 to 8.7 in 2019.</li>
+      <li>It could be better life opportunities or be contented with simple things in life like peace and stability, particularly in countries with a dark history of conflicts like Colombia and South Africa.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -2123,30 +2127,30 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Insight 3: Working conditions matter towards happiness
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot30.jpeg" width="450px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 29: Lowest 3 Economies with lowest 1 year tenure paid annual leave&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot30.jpeg" width="450px">
+      <figcaption style="text-align: left;">Figure 29: Lowest 3 Economies with lowest 1 year tenure paid annual leave</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;From figure 29, it shows a comparison of the 3 economies with lowest paid annual leave from 2013 to 2019 at 1 year employee tenure.&lt;/li&gt;
-      &lt;li&gt;US has the lowest at 0, followed by Singapore and Mexico at 6 and 7 respectively.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>From figure 29, it shows a comparison of the 3 economies with lowest paid annual leave from 2013 to 2019 at 1 year employee tenure.</li>
+      <li>US has the lowest at 0, followed by Singapore and Mexico at 6 and 7 respectively.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -2170,30 +2174,30 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Insight 3: Working conditions matter towards happiness
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot31.jpeg" width="450px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 30: Lowest 3 Economies with lowest 5 year tenure paid annual leave&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot31.jpeg" width="450px">
+      <figcaption style="text-align: left;">Figure 30: Lowest 3 Economies with lowest 5 year tenure paid annual leave</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;From figure 30, a comparison of the 3 economies with lowest paid annual leave from 2013 to 2019 at 5 year employee tenure.&lt;/li&gt;
-      &lt;li&gt;At 5 year tenure, US remains at 0, Singapore at 11 and Costa Rica replaces Mexico for the lowest 3 countries at 12.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>From figure 30, a comparison of the 3 economies with lowest paid annual leave from 2013 to 2019 at 5 year employee tenure.</li>
+      <li>At 5 year tenure, US remains at 0, Singapore at 11 and Costa Rica replaces Mexico for the lowest 3 countries at 12.</li>
+    </ul>
+  </div>
+</div>
 
 ---
-&lt;style&gt;
+<style>
 /* Flexbox container to create two-column layout */
 .two-column {
   display: flex;              /* Use Flexbox for layout */
@@ -2217,28 +2221,28 @@ class: center, middle, inverse
 .right-column ul li {
   margin-bottom: 10px;        /* Adjust the spacing between bullet points */
 }
-&lt;/style&gt;
+</style>
 
 #### Insight 3: Working conditions matter towards happiness
 
-&lt;div class="two-column"&gt;
-  &lt;div class="left-column"&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot33.jpeg" width="450px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 33: Life ladder overtime with paid annual leave for 1 year tenure for top and bottom 3 economies&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div class="two-column">
+  <div class="left-column">
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot33.jpeg" width="450px">
+      <figcaption style="text-align: left;">Figure 33: Life ladder overtime with paid annual leave for 1 year tenure for top and bottom 3 economies</figcaption>
+    </figure>
+  </div>
   
-  &lt;div class="right-column"&gt;
-    &lt;!-- Your body text in point form with spacing --&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Figure 33 shows Top and bottom 3 countries based paid annual leaves depending on tenure are plotted on the line graph overtime from 2013 to 2019 based on their life ladder at 1 year employee tenure.&lt;/li&gt;
-      &lt;li&gt;A higher paid annual leave offers range of benefits that can improve quality of life personally and professionally. These includes reduced stress, improved productivity and more exploration opportunities for personal growth. &lt;/li&gt;
-      &lt;li&gt;For top 3 countries with highest paid annual leave for 1 year tenure, there is an upward trend improvement in Life Ladder, even though France life ladder lacks behind Finland and UK.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="right-column">
+    <!-- Your body text in point form with spacing -->
+    <ul>
+      <li>Figure 33 shows Top and bottom 3 countries based paid annual leaves depending on tenure are plotted on the line graph overtime from 2013 to 2019 based on their life ladder at 1 year employee tenure.</li>
+      <li>A higher paid annual leave offers range of benefits that can improve quality of life personally and professionally. These includes reduced stress, improved productivity and more exploration opportunities for personal growth. </li>
+      <li>For top 3 countries with highest paid annual leave for 1 year tenure, there is an upward trend improvement in Life Ladder, even though France life ladder lacks behind Finland and UK.</li>
+    </ul>
+  </div>
+</div>
 
 ---
 #### Insight 3: Working conditions matter towards happiness
@@ -2252,13 +2256,13 @@ class: center, middle, inverse
 ---
 #### Insight 3: Working conditions matter towards happiness
 
-&lt;div&gt;
-    &lt;!-- Your image and caption --&gt;
-    &lt;figure style="text-align: left;"&gt;
-      &lt;img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot34.jpeg" width="1200px"&gt;
-      &lt;figcaption style="text-align: left;"&gt;Figure 34: Life ladder overtime with paid annual leave for 5 year tenure for top and bottom 3 economies&lt;/figcaption&gt;
-    &lt;/figure&gt;
-  &lt;/div&gt;
+<div>
+    <!-- Your image and caption -->
+    <figure style="text-align: left;">
+      <img src="C:/Users/weiki/OneDrive/Documents/Masters/GITHUB/Rplot34.jpeg" width="1200px">
+      <figcaption style="text-align: left;">Figure 34: Life ladder overtime with paid annual leave for 5 year tenure for top and bottom 3 economies</figcaption>
+    </figure>
+  </div>
   
 ---
 #### Insight 3: Working conditions matter towards happiness
@@ -2328,141 +2332,3 @@ class: center, middle, inverse
 
 * Importantly, access to state-of-the-art facilities like prestigious universities produces skilled human capital, allowing higher productivity per hour per headcount in wealthier societies, hence, lowering working hours required.
 
-    </textarea>
-<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
-<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-<script>var slideshow = remark.create({
-"highlightStyle": "github",
-"highlightLines": true,
-"ratio": "16:9",
-"countIncrementalSlides": true,
-"slideNumberFormat": "%current%"
-});
-if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
-  window.dispatchEvent(new Event('resize'));
-});
-(function(d) {
-  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
-  if (!r) return;
-  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
-  d.head.appendChild(s);
-})(document);
-
-(function(d) {
-  var el = d.getElementsByClassName("remark-slides-area");
-  if (!el) return;
-  var slide, slides = slideshow.getSlides(), els = el[0].children;
-  for (var i = 1; i < slides.length; i++) {
-    slide = slides[i];
-    if (slide.properties.continued === "true" || slide.properties.count === "false") {
-      els[i - 1].className += ' has-continuation';
-    }
-  }
-  var s = d.createElement("style");
-  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
-  d.head.appendChild(s);
-})(document);
-// delete the temporary CSS (for displaying all slides initially) when the user
-// starts to view slides
-(function() {
-  var deleted = false;
-  slideshow.on('beforeShowSlide', function(slide) {
-    if (deleted) return;
-    var sheets = document.styleSheets, node;
-    for (var i = 0; i < sheets.length; i++) {
-      node = sheets[i].ownerNode;
-      if (node.dataset["target"] !== "print-only") continue;
-      node.parentNode.removeChild(node);
-    }
-    deleted = true;
-  });
-})();
-// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
-// screen reader (see PR #262)
-(function(d) {
-  let res = {};
-  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
-    const t = tr.querySelector('td:nth-child(2)').innerText;
-    tr.querySelectorAll('td:first-child .key').forEach(key => {
-      const k = key.innerText;
-      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
-    });
-  });
-  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
-})(document);
-(function() {
-  "use strict"
-  // Replace <script> tags in slides area to make them executable
-  var scripts = document.querySelectorAll(
-    '.remark-slides-area .remark-slide-container script'
-  );
-  if (!scripts.length) return;
-  for (var i = 0; i < scripts.length; i++) {
-    var s = document.createElement('script');
-    var code = document.createTextNode(scripts[i].textContent);
-    s.appendChild(code);
-    var scriptAttrs = scripts[i].attributes;
-    for (var j = 0; j < scriptAttrs.length; j++) {
-      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
-    }
-    scripts[i].parentElement.replaceChild(s, scripts[i]);
-  }
-})();
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
-// adds .remark-code-has-line-highlighted class to <pre> parent elements
-// of code chunks containing highlighted lines with class .remark-code-line-highlighted
-(function(d) {
-  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
-  const preParents = [];
-  const findPreParent = function(line, p = 0) {
-    if (p > 1) return null; // traverse up no further than grandparent
-    const el = line.parentElement;
-    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
-  };
-
-  for (let line of hlines) {
-    let pre = findPreParent(line);
-    if (pre && !preParents.includes(pre)) preParents.push(pre);
-  }
-  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
-})(document);</script>
-
-<script>
-slideshow._releaseMath = function(el) {
-  var i, text, code, codes = el.getElementsByTagName('code');
-  for (i = 0; i < codes.length;) {
-    code = codes[i];
-    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
-      text = code.textContent;
-      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
-          /^\$\$(.|\s)+\$\$$/.test(text) ||
-          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
-        code.outerHTML = code.innerHTML;  // remove <code></code>
-        continue;
-      }
-    }
-    i++;
-  }
-};
-slideshow._releaseMath(document);
-</script>
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-(function () {
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
-  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
-    script.src  = script.src.replace(/^https?:/, '');
-  document.getElementsByTagName('head')[0].appendChild(script);
-})();
-</script>
-  </body>
-</html>
