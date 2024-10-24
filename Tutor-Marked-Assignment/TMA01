@@ -5,9 +5,9 @@
     <meta charset="utf-8" />
     <meta name="author" content="Tan Wei Kiat" />
     <meta name="date" content="2024-10-24" />
-    <script src="TMA_github_presentation_files/header-attrs-2.28/header-attrs.js"></script>
+    <script src="TMA01/header-attrs-2.28/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
-    <script src=""TMA_github_presentation_files/panelset-0.2.6/panelset.js"></script>
+    <script src=""TMA01/panelset-0.2.6/panelset.js"></script>
     <link rel="stylesheet" href="scrollable.css" type="text/css" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
