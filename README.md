@@ -1,6 +1,6 @@
 
 
-This repository contains works using R language programming, including school works from the Master's of Analytics and Visualisation (MAVI) programme from Singapore University of Social Science (SUSS).
+This page contains works using R language programming, including school works from the Master's of Analytics and Visualisation (MAVI) programme from Singapore University of Social Science (SUSS).
 
 
 **ANL 501 Data Visualisation & Storytelling**
