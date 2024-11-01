@@ -10,7 +10,7 @@ This page contains works using R language programming, including school works fr
      
 **Personal Works**
 
-1. <a href=""> USA </a>
+1. <a href=""> USA Election Map Animation </a>
 
 
  
