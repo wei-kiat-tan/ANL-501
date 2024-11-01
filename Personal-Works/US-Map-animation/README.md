@@ -10,7 +10,7 @@ The US Presidential Election is the world's most significant and widely watched 
 
 Former President Donald Trump election victory in 2016 saw him and adminstration clashing with foreign partners and enemies from geopolitics to trade to international agreements.
 
-This page aims to show an animation of the US Presidential Election results, share of republican and democrat voters from 1960 to 2020. Lastly a facet grid view of the election results and share of republican and democrat voters will be shown.  
+This page showcases animations of the US Presidential Election results, share of republican and democrat voters from 1960 to 2020. Lastly a facet grid view of the election results and share of republican and democrat voters will be shown below.  
 
 ----
 
