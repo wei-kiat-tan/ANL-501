@@ -14,7 +14,7 @@ This page showcases animations of the US Presidential Election results, share of
 
 ----
 
-**Facet frid of US President Election Results from 1960 to 2020**
+**Facet grid of US President Election Results from 1960 to 2020**
 
 ![](Rplotfacet_election.jpeg)
 
