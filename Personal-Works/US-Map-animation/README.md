@@ -1,7 +1,7 @@
 **Timelapse of the US Presidential Elections from 1960 to 2020**
 
 
-[insert animation of us election map here]
+![](election_map.gif)
 
 
 ---
@@ -16,33 +16,30 @@ This page aims to show an animation of the US Presidential Election results, sha
 
 **Facet frid of US President Election Results from 1960 to 2020**
 
-[insert picture]
+![](/Rplotfacet_election.jpeg)
 
 ---
 
 **Distribution of Republican Voters across States from 1960 to 2020**
 
-[insert animation]
+![](republican_heatmap.gif)
 
 ----
 
 **Facet grid of Republican Voters across State from 1960 to 2020**
 
-[insert picture]
+![](Rplotrepublican.jpeg)
 
 ----
 
 **Distribution of Democrat Voters across States from 1960 to 2020**
 
-[insert animation]
+![](democrat_heatmap.gif)
 
 ----
 
 **Facet grid of Democrat Voters across State from 1960 to 2020**
 
-[insert picture]
-
-
-
+![](Rplotdemocrat.jpeg)
 
 
