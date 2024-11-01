@@ -16,7 +16,7 @@ This page aims to show an animation of the US Presidential Election results, sha
 
 **Facet frid of US President Election Results from 1960 to 2020**
 
-![](/Rplotfacet_election.jpeg)
+![](Rplotfacet_election.jpeg)
 
 ---
 
