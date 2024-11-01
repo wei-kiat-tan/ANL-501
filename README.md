@@ -12,5 +12,5 @@ This page contains works using R language programming, including school works fr
 
 1. <a href="https://wei-kiat-tan.github.io/R-programming-Portfolio/Personal-Works/US-Map-animation/"> USA Election Map Animation </a>
 
-
+2. <a href=""> Singapore General Election </a> [Coming Soon]
  
