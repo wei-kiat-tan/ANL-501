@@ -57,6 +57,7 @@ Drawing inspiration from the <a href="https://www.washingtonpost.com/wp-srv/spec
 
 * Work is inspired by the <a href="https://www.washingtonpost.com/wp-srv/special/business/states-most-threatened-by-trade/"> Washington Post </a> for showing an alternative choropleth visualisation.
 * Code and package installing from <a href="https://github.com/hrbrmstr/statebins?tab=readme-ov-file/"> hrbmster </a>
+* Data Source from <a href="https://www.presidency.ucsb.edu/statistics/elections/2020/"> The Amercian Presidency Project </a>
 
 
 
