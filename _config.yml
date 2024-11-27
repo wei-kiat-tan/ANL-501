@@ -1,5 +1,13 @@
-title: R Programming Works
-description: Personal and school works using R language
-logo: Rlogo.png
-description: <a href="https://wei-kiat-tan.github.io/weikiat98.github.io/">Return to My Profile Page</a>
+title: Wei Kiat Tan
+logo: assets/img/WhatsApp Image 2024-05-02 at 21.54.27.jpeg
+description: R programming | MySQL | Tableau | Python
+title: Wei Kiat Tan
+logo: assets/img/WhatsApp Image 2024-05-02 at 21.54.27.jpeg
+description: R programming | MySQL | Tableau | Python
+minima:
+  social_links:
+    - {platform: github,  user_url: "https://github.com/wei-kiat-tan" }
+    - {platform: linkedin, user_url: "https://www.linkedin.com/in/wei-kiat-tan/" }
+show_downloads: 
+google_analytics: UA-NNNNNNNN-N
 theme: jekyll-theme-minimal
